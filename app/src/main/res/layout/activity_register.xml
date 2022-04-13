@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgstyle"
+    tools:context=".Register">
+
+    <!-- untuk menyejajarkan semua child view-nya dalam satu arah -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- untuk menyejajarkan ImageView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- menambahkan variasi pada bagian atas (header) -->
+            <ImageView
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:src="@drawable/ic_bgnew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- untuk menyejajarkan form register -->
+        <LinearLayout
+            android:paddingRight="50dp"
+            android:paddingLeft="50dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- untuk menyejajarkan text Sign Up -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <!-- untuk membuat tulisan Sign Up -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Up"
+                    android:textSize="25dp"
+                    android:textColor="#FF000000" />
+            </LinearLayout>
+
+            <!-- memberikan jarak antara text Sign Up dengan form register -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <!-- untuk membuat tulisan Username -->
+            <TextView
+                android:textColor="#808080"
+                android:text="Username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- untuk membuat form Username -->
+            <EditText
+                android:textColor="#808080"
+                android:textSize="14sp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:background="@drawable/form"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+            <!-- memberikan jarak antara form Username dengan form E-mail -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <!-- untuk membuat tulisan E-mail -->
+            <TextView
+                android:textColor="#808080"
+                android:text="E-mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- untuk membuat form E-mail -->
+            <EditText
+                android:textColor="#808080"
+                android:textSize="14sp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:background="@drawable/form"
+                android:hint="example@gmail.com"
+                android:textColorHint="#808080"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+            <!-- memberikan jarak antara from E-mail dengan form Password -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <!-- untuk membuat tulisan Password -->
+            <TextView
+                android:textColor="#808080"
+                android:text="Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- untuk membuat form Password -->
+            <EditText
+                android:textColor="#808080"
+                android:textSize="14sp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:background="@drawable/form"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"/>
+
+            <!-- untuk membuat tombol RadioButton Remember Me -->
+            <RadioButton
+                android:textColor="#808080"
+                android:layout_marginTop="5dp"
+                android:text="Remember Me"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+            <!-- untuk membuat tombol Sign Up -->
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/button"
+                android:textColor="#ffffff"
+                android:text="Sign Up"
+                android:textAllCaps="false"
+                android:textSize="15dp"
+                android:onClick="register"/>
+
+            <!-- untuk menyejajarkan semua child view-nya dalam satu arah -->
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- untuk membuat tulisan Have Account? -->
+                <TextView
+                    android:textColor="#808080"
+                    android:text="Have Account?"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- memberikan jarak antara text Account dengan text login -->
+                <RelativeLayout
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"/>
+
+                <!-- untuk membuat tulisan Login -->
+                <TextView
+                    android:id="@+id/login1"
+                    android:textColor="#2A93D5"
+                    android:textStyle="bold"
+                    android:text="Login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="login"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
