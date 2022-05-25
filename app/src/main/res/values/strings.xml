@@ -11,4 +11,19 @@
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="address">Kampus Bukit, Jl. Raya Kampus Unud Jimbaran, Kec. Kuta Sel., Kabupaten Badung, Bali 80361</string>
+
+    <string name="order">Your order on process...</string>
+
+    <string name="sku1">L99ASD811</string>
+    <string name="berat1">1kg</string>
+    <string name="stok1">10</string>
+    <string name="sku2">L99ASD822</string>
+    <string name="berat2">0,5kg</string>
+    <string name="stok2">20</string>
+    <string name="sku3">L99ASD833</string>
+    <string name="berat3">2kg</string>
+    <string name="stok3">30</string>
+
 </resources>

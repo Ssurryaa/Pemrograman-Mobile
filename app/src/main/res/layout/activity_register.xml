@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgstyle"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
     tools:context=".Register">
 
     <!-- untuk menyejajarkan semua child view-nya dalam satu arah -->
@@ -64,12 +65,14 @@
                 android:textColor="#808080"
                 android:text="Username"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <!-- untuk membuat form Username -->
             <EditText
+                android:id="@+id/regisUsername"
                 android:textColor="#808080"
                 android:textSize="14sp"
+                android:inputType="textPersonName"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:background="@drawable/form"
@@ -90,11 +93,13 @@
 
             <!-- untuk membuat form E-mail -->
             <EditText
+                android:id="@+id/regisEmail"
                 android:textColor="#808080"
                 android:textSize="14sp"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:background="@drawable/form"
+                android:inputType="textEmailAddress"
                 android:hint="example@gmail.com"
                 android:textColorHint="#808080"
                 android:layout_width="match_parent"
@@ -114,12 +119,17 @@
 
             <!-- untuk membuat form Password -->
             <EditText
+                android:id="@+id/regisPassword"
                 android:textColor="#808080"
                 android:textSize="14sp"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:background="@drawable/form"
                 android:layout_width="match_parent"
+                android:inputType="textPassword"
+                android:drawableEnd="@drawable/ic_visibility_off_24"
+                android:drawableTint="@color/grey"
+                android:longClickable="false"
                 android:layout_height="35dp"/>
 
             <!-- untuk membuat tombol RadioButton Remember Me -->
@@ -132,7 +142,7 @@
 
             <!-- untuk membuat tombol Sign Up -->
             <Button
-                android:id="@+id/login"
+                android:id="@+id/buttondaftar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
@@ -141,8 +151,7 @@
                 android:textColor="#ffffff"
                 android:text="Sign Up"
                 android:textAllCaps="false"
-                android:textSize="15dp"
-                android:onClick="register"/>
+                android:textSize="15dp" />
 
             <!-- untuk menyejajarkan semua child view-nya dalam satu arah -->
             <LinearLayout
@@ -165,13 +174,12 @@
 
                 <!-- untuk membuat tulisan Login -->
                 <TextView
-                    android:id="@+id/login1"
+                    android:id="@+id/haveAccount"
                     android:textColor="#2A93D5"
                     android:textStyle="bold"
                     android:text="Login"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="login"/>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -10,22 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Latihan">
         <activity
-            android:name=".Register"
+            android:name=".Transaksi"
+            android:exported="false" />
+        <activity
+            android:name=".Product"
+            android:exported="false" />
+        <activity
+            android:name=".Notifikasi"
+            android:exported="false" />
+        <activity
+            android:name=".Chat"
+            android:exported="false" />
+        <activity
+            android:name=".Masuk"
+            android:exported="false" />
+        <activity
+            android:name=".DetailProduk"
             android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Register" />
     </application>
 
 </manifest>

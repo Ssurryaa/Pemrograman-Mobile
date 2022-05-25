@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigation = findViewById(R.id.botton_navigation);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFragment()).commit();
 
@@ -31,8 +32,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home_menu:
                         selectedFragment = new HomeFragment();
                         break;
-                    case R.id.cart_menu:
-                        selectedFragment = new CartFragment();
+                    case R.id.home_explore:
+                        selectedFragment = new ExploreFragment();
+                        break;
+                    case R.id.cart_chat:
+                        selectedFragment = new ChatFragment();
                         break;
                     case R.id.profile_menu:
                         selectedFragment = new ProfileFragment();
@@ -43,5 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
     }
+
+
 }

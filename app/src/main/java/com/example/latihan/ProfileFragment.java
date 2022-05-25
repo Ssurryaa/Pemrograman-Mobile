@@ -1,12 +1,19 @@
 package com.example.latihan;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,9 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView location;
+    TextView instagram;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -59,6 +69,48 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        location = (TextView) view.findViewById(R.id.btn_location);
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String loc = location.getText().toString();
+
+                // Parse the location and create the intent.
+                Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
+                Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
+
+                // Find an activity to handle the intent, and start that activity.
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    Log.d("ImplicitIntents", "Can't handle this intent!");
+                }
+            }
+        });
+
+        instagram = (TextView) view.findViewById(R.id.btn_instagram);
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("http://instagram.com");
+                Intent followme = new Intent(Intent.ACTION_VIEW, uri);
+
+                followme.setPackage("com.instagram.android");
+
+                try {
+                    startActivity(followme);
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://instagram.com")));
+                }
+            }
+        });
+
+        return view;
     }
+
+
 }
