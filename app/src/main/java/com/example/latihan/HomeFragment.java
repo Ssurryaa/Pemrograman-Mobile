@@ -86,7 +86,9 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         TextView tvData1 = (TextView) view.findViewById(R.id.name);
-        tvData1.setText(getActivity().getIntent().getStringExtra("dataEmail"));
+        tvData1.setText(getActivity().getIntent().getStringExtra("dataUsername"));
+
+        img_produk1 = view.findViewById(R.id.img_produk1);
 
         text_paper = view.findViewById(R.id.text_paper);
         text_Leather = view.findViewById(R.id.text_Leather);
@@ -165,6 +167,7 @@ public class HomeFragment extends Fragment {
         produk1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //String image = img_produk1.getImageAlpha().;
                 String nama = tv_nama1.getText().toString();
                 String harga = tv_harga1.getText().toString();
                 String sku = getString(R.string.sku1);
@@ -195,6 +198,7 @@ public class HomeFragment extends Fragment {
                 String deskripsi = getString(R.string.lorem_ipsum);
 
                 Intent intent = new Intent(getActivity(), DetailProduk.class);
+                intent.putExtra("dataImage", R.drawable.fabric);
                 intent.putExtra("dataNama", nama);
                 intent.putExtra("dataHarga", harga);
                 intent.putExtra("dataSku", sku);

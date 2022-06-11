@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
 
     TextView reg;
     boolean passwordVisible;
-    private EditText inputEmail, inputPassword;
+    private EditText inputUsername, inputPassword;
     private FirebaseAuth mAuth;
 
     @Override
@@ -33,14 +33,14 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        TextView tvData1 = (TextView) findViewById(R.id.email);
-        tvData1.setText(getIntent().getStringExtra("dataEmail"));
+        TextView tvData1 = (TextView) findViewById(R.id.username);
+        tvData1.setText(getIntent().getStringExtra("dataUsername"));
         TextView tvData2 = (TextView) findViewById(R.id.password);
         tvData2.setText(getIntent().getStringExtra("dataPassword"));
 
         mAuth = FirebaseAuth.getInstance();
 
-        inputEmail = findViewById(R.id.email);
+        inputUsername = findViewById(R.id.username);
         inputPassword = findViewById(R.id.password);
 
         inputPassword.setOnTouchListener(new View.OnTouchListener() {
@@ -72,11 +72,12 @@ public class Login extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = inputEmail.getText().toString();
+                String email = getIntent().getStringExtra("dataEmail");
+                String username = inputUsername.getText().toString();
                 String password = inputPassword.getText().toString();
 
-                if (email.equals("")){
-                    Toast.makeText(Login.this, "Silahkan input email/username", Toast.LENGTH_SHORT).show();
+                if (username.equals("")){
+                    Toast.makeText(Login.this, "Silahkan input username", Toast.LENGTH_SHORT).show();
 
                 } else if (password.length() < 6){
                     Toast.makeText(Login.this, "Silahkan input password minimal 6 karakter", Toast.LENGTH_SHORT).show();
@@ -86,6 +87,7 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Login Berhasil.",
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Login.this, MainActivity.class);
+                    intent.putExtra("dataUsername", username);
                     intent.putExtra("dataEmail", email);
                     startActivity(intent);
 

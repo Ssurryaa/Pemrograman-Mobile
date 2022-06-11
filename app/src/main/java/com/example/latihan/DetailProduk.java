@@ -23,13 +23,22 @@ public class DetailProduk extends AppCompatActivity {
 
     Toolbar toolbar;
     ImageView sharebutton;
-    Button share;
+    Button buybutton;
     ImageView chatbutton;
+    TextView tv_nama1, tv_harga1;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_produk);
+
+        imageView = findViewById(R.id.image);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            int resId = bundle.getInt("dataImage");
+            imageView.setImageResource(resId);
+        }
 
         TextView tvNama1 = (TextView) findViewById(R.id.tv_nama);
         tvNama1.setText(getIntent().getStringExtra("dataNama"));
@@ -48,6 +57,9 @@ public class DetailProduk extends AppCompatActivity {
 
         TextView tvDeskripsi1 = (TextView) findViewById(R.id.tv_deskripsi);
         tvDeskripsi1.setText(getIntent().getStringExtra("dataDeskripsi"));
+
+        tv_nama1 = findViewById(R.id.tv_nama);
+        tv_harga1 = findViewById(R.id.tv_harga);
 
         sharebutton= (ImageView) findViewById(R.id.btn_share);
         sharebutton.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +96,19 @@ public class DetailProduk extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailProduk.this, Chat.class);
+                startActivity(intent);
+            }
+        });
+
+        buybutton= (Button) findViewById(R.id.btnBuy);
+        buybutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nama = tv_nama1.getText().toString();
+                String harga = tv_harga1.getText().toString();
+                Intent intent = new Intent(DetailProduk.this, Transaksi.class);
+                intent.putExtra("dataNama", nama);
+                intent.putExtra("dataHarga", harga);
                 startActivity(intent);
             }
         });

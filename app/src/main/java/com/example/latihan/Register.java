@@ -98,6 +98,7 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this, "Registrasi Berhasil. Silahkan Login",
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Register.this, Login.class);
+                    intent.putExtra("dataUsername", username);
                     intent.putExtra("dataEmail", email);
                     intent.putExtra("dataPassword", password);
                     startActivity(intent);

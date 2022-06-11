@@ -72,6 +72,11 @@ public class ProfileFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+        TextView tvData1 = (TextView) view.findViewById(R.id.tv_name);
+        tvData1.setText(getActivity().getIntent().getStringExtra("dataUsername"));
+        TextView tvData2 = (TextView) view.findViewById(R.id.username);
+        tvData2.setText(getActivity().getIntent().getStringExtra("dataUsername"));
+
         location = (TextView) view.findViewById(R.id.btn_location);
         location.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -64,16 +64,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email/Username"
+                android:text="Username"
                 android:textColor="#808080" />
 
             <!-- untuk membuat form Username -->
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:background="@drawable/form"
-                android:hint="example@gmail.com"
+                android:hint="example123"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
                 android:textColor="#808080"
