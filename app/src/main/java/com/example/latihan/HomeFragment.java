@@ -108,9 +108,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String kategori = text_paper.getText().toString();
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), Product.class);
                 intent.putExtra("dataKategori", kategori);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -120,9 +130,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String kategori = text_Leather.getText().toString();
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), Product.class);
                 intent.putExtra("dataKategori", kategori);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -132,9 +152,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String kategori = text_Fabric.getText().toString();
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), Product.class);
                 intent.putExtra("dataKategori", kategori);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -144,9 +174,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String kategori = text_Embroidery.getText().toString();
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), Product.class);
                 intent.putExtra("dataKategori", kategori);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -156,9 +196,19 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String kategori = text_Ceramic.getText().toString();
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), Product.class);
                 intent.putExtra("dataKategori", kategori);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -167,21 +217,31 @@ public class HomeFragment extends Fragment {
         produk1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //String image = img_produk1.getImageAlpha().;
                 String nama = tv_nama1.getText().toString();
                 String harga = tv_harga1.getText().toString();
                 String sku = getString(R.string.sku1);
                 String berat = getString(R.string.berat1);
                 String stok = getString(R.string.stok1);
                 String deskripsi = getString(R.string.lorem_ipsum);
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), DetailProduk.class);
+                intent.putExtra("dataImage", R.drawable.ceramic_jubilee_);
                 intent.putExtra("dataNama", nama);
                 intent.putExtra("dataHarga", harga);
                 intent.putExtra("dataSku", sku);
                 intent.putExtra("dataBerat", berat);
                 intent.putExtra("dataStok", stok);
                 intent.putExtra("dataDeskripsi", deskripsi);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -196,6 +256,11 @@ public class HomeFragment extends Fragment {
                 String berat = getString(R.string.berat2);
                 String stok = getString(R.string.stok2);
                 String deskripsi = getString(R.string.lorem_ipsum);
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), DetailProduk.class);
                 intent.putExtra("dataImage", R.drawable.fabric);
@@ -205,6 +270,11 @@ public class HomeFragment extends Fragment {
                 intent.putExtra("dataBerat", berat);
                 intent.putExtra("dataStok", stok);
                 intent.putExtra("dataDeskripsi", deskripsi);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -219,14 +289,25 @@ public class HomeFragment extends Fragment {
                 String berat = getString(R.string.berat3);
                 String stok = getString(R.string.stok3);
                 String deskripsi = getString(R.string.lorem_ipsum);
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
                 Intent intent = new Intent(getActivity(), DetailProduk.class);
+                intent.putExtra("dataImage", R.drawable.ceramic);
                 intent.putExtra("dataNama", nama);
                 intent.putExtra("dataHarga", harga);
                 intent.putExtra("dataSku", sku);
                 intent.putExtra("dataBerat", berat);
                 intent.putExtra("dataStok", stok);
                 intent.putExtra("dataDeskripsi", deskripsi);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });

@@ -14,11 +14,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:cropToPadding="true"
-            android:src="@drawable/ic_bgnew"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:src="@drawable/ic_bgnew" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +43,7 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:gravity="center">
 
             <RelativeLayout
@@ -64,7 +64,7 @@
                     android:background="@drawable/circle"
                     android:padding="3dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/ic_user" />
+                    android:src="@drawable/ic_user1" />
             </RelativeLayout>
 
             <TextView
@@ -73,258 +73,141 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imgUser"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="5sp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="sans-serif-light"
                 android:text="Alexandra An"
                 android:textColor="@color/black"
                 android:textSize="32sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/grey1" />
         </LinearLayout>
 
     </FrameLayout>
 
-    <LinearLayout
-        android:id="@+id/linlay1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
+        android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:backgroundTint="@color/blue_700"
-            android:background="@drawable/button"
-            android:gravity="center"
-            android:paddingBottom="5dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:layout_below="@+id/linlay1">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Profile"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:background="@drawable/circle"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_user_stroke"
+                    app:tint="@color/blue_700" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/circle"
+                    android:src="@drawable/ic_notifications"
+                    app:tint="@color/blue_700" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:padding="3dp"
+                    android:background="@drawable/circle"
+                    android:src="@drawable/ic_baseline_shopping_bag_24"
+                    app:tint="@color/blue_700" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:padding="3dp"
+                    android:background="@drawable/circle"
+                    android:src="@drawable/ic_baseline_location_on_24"
+                    app:tint="@color/blue_700" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:padding="4dp"
+                    android:background="@drawable/circle"
+                    android:src="@drawable/ic_ig"
+                    app:tint="@color/blue_700" />
             </LinearLayout>
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/linlay1">
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Username"
-                    android:textColor="@color/blue_700"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/username"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:layout_marginTop="3dp"
-                    android:text="Alexandra"
-                    android:textColor="#000000" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/grey1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textColor="@color/blue_700"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:layout_marginTop="3dp"
-                    android:text="alexandra@star.com"
-                    android:textColor="#000000" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/grey1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Phone"
-                    android:textColor="@color/blue_700"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:layout_marginTop="3dp"
-                    android:text="+62 812341234123"
-                    android:textColor="#000000" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/grey1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_marginLeft="60dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
                     <TextView
+                        android:id="@+id/profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Address"
-                        android:textColor="@color/blue_700"
-                        android:textSize="13sp" />
+                        android:fontFamily="sans-serif-light"
+                        android:layout_marginTop="4dp"
+                        android:text="My Profile"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="38dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Notification"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/transaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="38dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Transaction"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/btn_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:text="Open Location"
-                        android:textColor="@color/white"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:background="@drawable/button2"
-                        android:textSize="10sp" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/location_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:layout_marginTop="3dp"
-                    android:text="@string/address"
-                    android:textColor="#000000"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/grey1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Instagram"
-                        android:textColor="@color/blue_700"
-                        android:textSize="13sp" />
+                        android:layout_marginTop="38dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Location"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/btn_instagram"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:text="Open Instagram"
-                        android:textColor="@color/white"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="3dp"
-                        android:paddingBottom="3dp"
-                        android:background="@drawable/button2"
-                        android:textSize="10sp" />
+                        android:layout_marginTop="38dp"
+                        android:fontFamily="sans-serif-light"
+                        android:text="Instagram"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/instagram"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:layout_marginTop="3dp"
-                    android:text="Alexandra"
-                    android:textColor="#000000"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="5dp"
-                    android:background="@color/grey1" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-        </ScrollView>
-
-    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>

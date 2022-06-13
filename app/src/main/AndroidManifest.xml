@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Latihan">
         <activity
+            android:name=".CheckOut"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
             android:name=".Transaksi"
             android:exported="false" />
         <activity

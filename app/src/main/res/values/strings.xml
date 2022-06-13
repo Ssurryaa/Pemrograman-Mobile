@@ -16,13 +16,13 @@
 
     <string name="order">Your order on process...</string>
 
-    <string name="sku1">L99ASD811</string>
+    <string name="sku1">Baru</string>
     <string name="berat1">1kg</string>
     <string name="stok1">10</string>
-    <string name="sku2">L99ASD822</string>
+    <string name="sku2">Baru</string>
     <string name="berat2">0,5kg</string>
     <string name="stok2">20</string>
-    <string name="sku3">L99ASD833</string>
+    <string name="sku3">Baru</string>
     <string name="berat3">2kg</string>
     <string name="stok3">30</string>
 

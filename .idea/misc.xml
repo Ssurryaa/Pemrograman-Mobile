@@ -13,6 +13,7 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/form.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/grad.xml" value="0.181" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1305" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1305" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_bgnew.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_bulur.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_chart.xml" value="0.1635" />
@@ -23,21 +24,28 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_paper.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_profile.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_search.xml" value="0.1635" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_user.xml" value="0.1305" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_user1.xml" value="0.1305" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_user2.xml" value="0.1305" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/ic_user_stroke.xml" value="0.1305" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/nav_item_color_state.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/rectangle_4.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/shadow.xml" value="0.1635" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/drawable/sheet.xml" value="0.1305" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.13453815261044177" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_chat.xml" value="0.209375" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_check_out.xml" value="0.209375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_detail_produk.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_edit_profile.xml" value="0.209375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_login2.xml" value="0.209375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_masuk.xml" value="0.209375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_notifikasi.xml" value="0.209375" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_product.xml" value="0.1953125" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_profile.xml" value="0.19907407407407407" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_transaksi.xml" value="0.209375" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/activity_transaksi.xml" value="0.22" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/fragment_cart.xml" value="0.1953125" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/fragment_chat.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/latihan/app/src/main/res/layout/fragment_explore.xml" value="0.25" />

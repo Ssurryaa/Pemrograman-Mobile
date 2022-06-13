@@ -19,7 +19,6 @@ public class Product extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     ArrayList<ProductModel> data;
 
-    TextView category;
     ImageView notif;
 
     @Override
@@ -40,11 +39,15 @@ public class Product extends AppCompatActivity {
 
         data = new ArrayList<>();
         if (category.equals("Paper")){
-            for (int i = 0; i < ProductItem.product_name_papper.length; i++){
+            for (int i = 0; i < ProductItem.product_name_paper.length; i++){
                 data.add(new ProductModel(
-                        ProductItem.product_name_papper[i],
-                        ProductItem.product_price_papper[i],
-                        ProductItem.product_img_papper[i]
+                        ProductItem.product_name_paper[i],
+                        ProductItem.product_price_paper[i],
+                        ProductItem.product_kondisi_paper[i],
+                        ProductItem.product_weight_paper[i],
+                        ProductItem.product_stock_paper[i],
+                        ProductItem.product_desc_paper[i],
+                        ProductItem.product_img_paper[i]
                 ));
             }
         }else if (category.equals("Leather")){
@@ -52,6 +55,10 @@ public class Product extends AppCompatActivity {
                 data.add(new ProductModel(
                         ProductItem.product_name_leather[i],
                         ProductItem.product_price_leather[i],
+                        ProductItem.product_kondisi_leather[i],
+                        ProductItem.product_weight_leather[i],
+                        ProductItem.product_stock_leather[i],
+                        ProductItem.product_desc_leather[i],
                         ProductItem.product_img_leather[i]
                 ));
             }
@@ -60,6 +67,10 @@ public class Product extends AppCompatActivity {
                 data.add(new ProductModel(
                         ProductItem.product_name_fabric[i],
                         ProductItem.product_price_fabric[i],
+                        ProductItem.product_kondisi_fabric[i],
+                        ProductItem.product_weight_fabric[i],
+                        ProductItem.product_stock_fabric[i],
+                        ProductItem.product_desc_fabric[i],
                         ProductItem.product_img_fabric[i]
                 ));
             }
@@ -68,6 +79,10 @@ public class Product extends AppCompatActivity {
                 data.add(new ProductModel(
                         ProductItem.product_name_embroidery[i],
                         ProductItem.product_price_embroidery[i],
+                        ProductItem.product_kondisi_embroidery[i],
+                        ProductItem.product_weight_embroidery[i],
+                        ProductItem.product_stock_embroidery[i],
+                        ProductItem.product_desc_embroidery[i],
                         ProductItem.product_img_embroidery[i]
                 ));
             }
@@ -76,6 +91,10 @@ public class Product extends AppCompatActivity {
                 data.add(new ProductModel(
                         ProductItem.product_name_ceramic[i],
                         ProductItem.product_price_ceramic[i],
+                        ProductItem.product_kondisi_ceramic[i],
+                        ProductItem.product_weight_ceramic[i],
+                        ProductItem.product_stock_ceramic[i],
+                        ProductItem.product_desc_ceramic[i],
                         ProductItem.product_img_ceramic[i]
                 ));
             }
@@ -83,6 +102,26 @@ public class Product extends AppCompatActivity {
 
         adapterRecyclerView = new AdapterRecyclerView(data);
         recyclerView.setAdapter(adapterRecyclerView);
+
+        adapterRecyclerView.setOnItemClickCallback(new AdapterRecyclerView.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(ProductModel productModel) {
+                String username = getIntent().getStringExtra("dataUsername");
+                String email = getIntent().getStringExtra("dataEmail");
+                String phone = getIntent().getStringExtra("dataPhone");
+                String loc = getIntent().getStringExtra("dataLocation");
+                String ig = getIntent().getStringExtra("dataInstagram");
+
+                Intent intent = new Intent(Product.this, DetailProduk.class);
+                intent.putExtra(DetailProduk.ITEM_EXTRA, productModel);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
+                startActivity(intent);
+            }
+        });
 
         notif = (ImageView) findViewById(R.id.notifikasi);
         notif.setOnClickListener(new View.OnClickListener() {
@@ -94,4 +133,5 @@ public class Product extends AppCompatActivity {
         });
 
     }
+
 }

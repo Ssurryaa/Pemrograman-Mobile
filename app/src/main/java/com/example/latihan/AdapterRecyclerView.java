@@ -15,15 +15,27 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
 
     private ArrayList<ProductModel> dataProduct;
 
+    private OnItemClickCallback onItemClickCallback;
+
+    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(ProductModel productModel);
+    }
+    
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textName, textPrice;
+        TextView textName, textPrice, textWeight, textStock;
         ImageView img;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textName = itemView.findViewById(R.id.product_name);
             textPrice = itemView.findViewById(R.id.product_price);
+//            textWeight = itemView.findViewById(R.id.tv_berat);
+//            textStock = itemView.findViewById(R.id.tv_stok);
             img = itemView.findViewById(R.id.img_produk);
         }
     }
@@ -34,26 +46,38 @@ public class AdapterRecyclerView extends RecyclerView.Adapter<AdapterRecyclerVie
 
     @NonNull
     @Override
-    public AdapterRecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterRecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         TextView product_name = holder.textName;
         TextView product_price = holder.textPrice;
+//        TextView product_weight = holder.textWeight;
+//        TextView product_stock = holder.textStock;
         ImageView img_price = holder.img;
 
         product_name.setText(dataProduct.get(position).getName());
         product_price.setText(dataProduct.get(position).getPrice());
+//        product_weight.setText(dataProduct.get(position).getWeight());
+//        product_stock.setText(dataProduct.get(position).getStock());
         img_price.setImageResource(dataProduct.get(position).getImg());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(dataProduct.get(holder.getAdapterPosition()));
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
+
         return dataProduct.size();
     }
 

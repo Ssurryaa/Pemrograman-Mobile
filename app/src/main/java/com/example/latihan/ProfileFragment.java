@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,8 +32,11 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    TextView profile;
+    TextView notification;
     TextView location;
     TextView instagram;
+    TextView transaction;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -74,24 +78,73 @@ public class ProfileFragment extends Fragment {
 
         TextView tvData1 = (TextView) view.findViewById(R.id.tv_name);
         tvData1.setText(getActivity().getIntent().getStringExtra("dataUsername"));
-        TextView tvData2 = (TextView) view.findViewById(R.id.username);
-        tvData2.setText(getActivity().getIntent().getStringExtra("dataUsername"));
+
+        profile = (TextView) view.findViewById(R.id.profile);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String username = getActivity().getIntent().getStringExtra("dataUsername");
+                String email = getActivity().getIntent().getStringExtra("dataEmail");
+                String phone = getActivity().getIntent().getStringExtra("dataPhone");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
+
+                Intent intent = new Intent(getActivity(), Profile.class);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
+                startActivity(intent);
+            }
+        });
+
+        notification = (TextView) view.findViewById(R.id.notification);
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Notifikasi.class);
+                startActivity(intent);
+            }
+        });
+
+        transaction = (TextView) view.findViewById(R.id.transaction);
+        transaction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nama = getActivity().getIntent().getStringExtra("dataNama");
+                String harga = getActivity().getIntent().getStringExtra("dataHarga");
+                String pesanan = getActivity().getIntent().getStringExtra("dataPesanan");
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
+
+                Intent intent = new Intent(getActivity(), Transaksi.class);
+                intent.putExtra("dataNama", nama);
+                intent.putExtra("dataHarga", harga);
+                intent.putExtra("dataPesanan", pesanan);
+                intent.putExtra("dataLocation", loc);
+                startActivity(intent);
+            }
+        });
 
         location = (TextView) view.findViewById(R.id.btn_location);
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String loc = location.getText().toString();
+                String loc = getActivity().getIntent().getStringExtra("dataLocation");
 
-                // Parse the location and create the intent.
-                Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
-                Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
+                if (loc == null){
+                    Toast.makeText(getActivity(), "Unknown Location", Toast.LENGTH_SHORT).show();
+                }else {
+                    // Parse the location and create the intent.
+                    Uri addressUri = Uri.parse("geo:0,0?q=" + loc);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
 
-                // Find an activity to handle the intent, and start that activity.
-                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);
-                } else {
-                    Log.d("ImplicitIntents", "Can't handle this intent!");
+                    // Find an activity to handle the intent, and start that activity.
+                    if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                        startActivity(intent);
+                    } else {
+                        Log.d("ImplicitIntents", "Can't handle this intent!");
+                    }
                 }
             }
         });
@@ -100,16 +153,22 @@ public class ProfileFragment extends Fragment {
         instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri uri = Uri.parse("http://instagram.com");
-                Intent followme = new Intent(Intent.ACTION_VIEW, uri);
+                String ig = getActivity().getIntent().getStringExtra("dataInstagram");
 
-                followme.setPackage("com.instagram.android");
+                if (ig == null){
+                    Toast.makeText(getActivity(), "Unknown Instagram", Toast.LENGTH_SHORT).show();
+                }else{
+                    Uri uri = Uri.parse("http://instagram.com/_u/" + ig);
+                    Intent followme = new Intent(Intent.ACTION_VIEW, uri);
 
-                try {
-                    startActivity(followme);
-                } catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://instagram.com")));
+                    followme.setPackage("com.instagram.android");
+
+                    try {
+                        startActivity(followme);
+                    } catch (ActivityNotFoundException e) {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://instagram.com"+ ig)));
+                    }
                 }
             }
         });

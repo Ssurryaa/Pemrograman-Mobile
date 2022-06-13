@@ -20,7 +20,7 @@
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Transaksi"
+            android:text="Transaction"
             android:textColor="@android:color/white"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_gravity="center" />
@@ -58,27 +58,62 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tv_nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Produk"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/tv_qty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="x"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+                </LinearLayout>
                 <TextView
-                    android:id="@+id/tv_nama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nama Produk"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:textSize="15dp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:text="Free Delivery"
+                    android:textColor="@color/grey"
                     android:textSize="14dp" />
-                <TextView
-                    android:id="@+id/tv_harga"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rp. 150.000"
-                    android:textColor="@color/blue_700"
-                    android:textStyle="bold"
-                    android:textSize="15dp" />
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Rp. "
+                        android:textColor="@color/blue_700"
+                        android:textStyle="bold"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/tv_harga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="150000"
+                        android:textColor="@color/blue_700"
+                        android:textStyle="bold"
+                        android:textSize="15dp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
         <View
@@ -87,5 +122,25 @@
             android:layout_marginTop="10dp"
             android:background="@color/grey1" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/button"
+            android:text="Back to Home"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+    </RelativeLayout>
 
 </LinearLayout>

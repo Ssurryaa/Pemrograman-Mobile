@@ -2,6 +2,7 @@ package com.example.latihan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 
@@ -27,6 +29,8 @@ public class DetailProduk extends AppCompatActivity {
     ImageView chatbutton;
     TextView tv_nama1, tv_harga1;
     ImageView imageView;
+
+    public static final String ITEM_EXTRA = "item_extra";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,33 +65,38 @@ public class DetailProduk extends AppCompatActivity {
         tv_nama1 = findViewById(R.id.tv_nama);
         tv_harga1 = findViewById(R.id.tv_harga);
 
+        ImageView img_produk = findViewById(R.id.image);
+        TextView product_name = findViewById(R.id.tv_nama);
+        TextView product_price = findViewById(R.id.tv_harga);
+        TextView product_kondisi = findViewById(R.id.tv_sku);
+        TextView product_weight = findViewById(R.id.tv_berat);
+        TextView product_stock = findViewById(R.id.tv_stok);
+        TextView product_desc = findViewById(R.id.tv_deskripsi);
+
+        ProductModel productModel = getIntent().getParcelableExtra(ITEM_EXTRA);
+        if (productModel != null){
+            Glide.with(this)
+                    .load(productModel.getImg())
+                    .into(img_produk);
+            product_name.setText(productModel.getName());
+            product_price.setText(productModel.getPrice());
+            product_kondisi.setText(productModel.getKondisi());
+            product_weight.setText(productModel.getWeight());
+            product_stock.setText(productModel.getStock());
+            product_desc.setText(productModel.getDesc());
+        }
+
         sharebutton= (ImageView) findViewById(R.id.btn_share);
         sharebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        DetailProduk.this, R.style.BottomSheetDialogTheme
-                );
-                View bottomSheetView = LayoutInflater.from(getApplicationContext())
-                        .inflate(
-                                R.layout.layout_share,
-                                (LinearLayout)findViewById(R.id.layout_share)
-                        );
-
-                bottomSheetView.findViewById(R.id.btnshare).setOnClickListener(new View.OnClickListener(){
-                    @Override
-                    public void onClick(View view) {
-                        Intent shareIntent=new Intent(android.content.Intent. ACTION_SEND);
-                        shareIntent.setType ("text/plain");
-                        shareIntent.putExtra(Intent. EXTRA_SUBJECT, "Insert Subject here");
-                        String app_url="Temukan produk menarik di StarCraft. Dapatkan sekarang juga di StarCraft! https://pqrs.my.id";
-                        shareIntent.putExtra(android.content.Intent. EXTRA_TEXT, app_url);
-                        startActivity(Intent.createChooser (shareIntent, "Share via"));
-                        Toast.makeText(DetailProduk.this, "Share...", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
+                Intent shareIntent=new Intent(android.content.Intent. ACTION_SEND);
+                shareIntent.setType ("text/plain");
+                shareIntent.putExtra(Intent. EXTRA_SUBJECT, "Insert Subject here");
+                String app_url="Temukan produk menarik di StarCraft. Dapatkan sekarang juga di StarCraft! https://pqrs.my.id";
+                shareIntent.putExtra(android.content.Intent. EXTRA_TEXT, app_url);
+                startActivity(Intent.createChooser (shareIntent, "Share via"));
+                Toast.makeText(DetailProduk.this, "Share...", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -106,9 +115,20 @@ public class DetailProduk extends AppCompatActivity {
             public void onClick(View v) {
                 String nama = tv_nama1.getText().toString();
                 String harga = tv_harga1.getText().toString();
-                Intent intent = new Intent(DetailProduk.this, Transaksi.class);
+                String username = getIntent().getStringExtra("dataUsername");
+                String email = getIntent().getStringExtra("dataEmail");
+                String phone = getIntent().getStringExtra("dataPhone");
+                String loc = getIntent().getStringExtra("dataLocation");
+                String ig = getIntent().getStringExtra("dataInstagram");
+
+                Intent intent = new Intent(DetailProduk.this, CheckOut.class);
                 intent.putExtra("dataNama", nama);
                 intent.putExtra("dataHarga", harga);
+                intent.putExtra("dataUsername", username);
+                intent.putExtra("dataEmail", email);
+                intent.putExtra("dataPhone", phone);
+                intent.putExtra("dataLocation", loc);
+                intent.putExtra("dataInstagram", ig);
                 startActivity(intent);
             }
         });
@@ -120,7 +140,4 @@ public class DetailProduk extends AppCompatActivity {
                 Toast.LENGTH_SHORT).show();
     }
 
-    public void showOrder(View view) {
-        displayToast(getString(R.string.order));
-    }
 }
